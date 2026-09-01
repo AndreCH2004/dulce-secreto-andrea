@@ -196,17 +196,17 @@
     <!-- Enlaces -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav align-items-center gap-3">
-        <li class="nav-item"><a class="nav-link text-suave" href="#productos">Kekes</a></li>
-        <li class="nav-item"><a class="nav-link text-suave" href="#personalizado">Hacer pedido</a></li>
-        <li class="nav-item"><a class="nav-link text-suave" href="#nosotros">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link text-suave" href="#contacto">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#productos">Kekes</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#personalizado">Hacer pedido</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#contacto">Contacto</a></li>
         <li class="nav-item d-none d-lg-block">
           <button class="btn btn-sm btn-outline-secondary border-0 btn-tema" id="themeToggleDesktop" aria-label="Cambiar tema">
             <i class="bi bi-moon-stars-fill" id="iconDesktop"></i>
           </button>
         </li>
         <li class="nav-item ms-lg-3">
-          <a href="#personalizado" class="btn btn-outline-dorado px-4 py-2">Hacer pedido</a>
+          <a href="#personalizado" class="btn btn-outline-dorado px-4 py-2 nav-link-cierra">Hacer pedido</a>
         </li>
       </ul>
     </div>
@@ -270,52 +270,122 @@
     <!-- Grid de Kekes -->
     <div class="row g-4" id="gridProductos">
 
-      <div class="col-12 col-md-6 col-lg-4 producto" data-categoria="frutal chocolate" data-sabor="Keke de Plátano con Chocolate">
+      <div class="col-12 col-md-6 col-lg-4 producto" data-tipo="keke" data-categoria="frutal chocolate" data-sabor="Keke de Plátano con Chocolate">
         <div class="card h-100 bg-tarjeta border-linea producto-card shadow-sm">
           <img src="img/platano-choc.jpg" class="card-img-top producto-img" alt="Keke de plátano con chocolate">
           <div class="card-body d-flex flex-column p-4">
             <h4 class="card-title font-display fw-bold" style="color: var(--text-principal);">Keke de Plátano con Chocolate</h4>
-            <p class="card-text text-suave flex-grow-1" style="font-size: 0.9rem;">Plátano natural y trozos de chocolate.</p>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div>
-                <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 25.00</span>
-                <span class="text-suave" style="font-size: 0.75rem;">Tamaño familiar</span>
+            <p class="card-text text-suave mb-2" style="font-size: 0.9rem;">Plátano natural y trozos de chocolate.</p>
+            <ul class="list-unstyled text-suave mb-3" style="font-size: 0.78rem;">
+              <li class="mb-1"><i class="bi bi-egg-fried me-1 text-dorado"></i>Hecho con plátano fresco de estación</li>
+              <li><i class="bi bi-clock-history me-1 text-dorado"></i>Preparado bajo pedido, con 24h de anticipación</li>
+            </ul>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between border-top border-linea pt-2 mb-1" style="font-size: 0.85rem;">
+                <span class="text-suave">Mediano</span>
+                <span class="fw-bold text-dorado">S/ 18.00</span>
               </div>
-              <button class="btn btn-outline-dorado btn-sm btn-pedir px-3">Pedir</button>
+              <div class="d-flex justify-content-between mb-3" style="font-size: 0.85rem;">
+                <span class="text-suave">Familiar</span>
+                <span class="fw-bold text-dorado">S/ 25.00</span>
+              </div>
+              <button class="btn btn-outline-dorado btn-sm btn-pedir w-100">Pedir</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4 producto" data-categoria="chocolate" data-sabor="Keke de Chocolate">
+      <div class="col-12 col-md-6 col-lg-4 producto" data-tipo="keke" data-categoria="chocolate" data-sabor="Keke de Chocolate">
         <div class="card h-100 bg-tarjeta border-linea producto-card shadow-sm">
           <img src="img/chocolate.jpg" class="card-img-top producto-img" alt="Keke de chocolate">
           <div class="card-body d-flex flex-column p-4">
             <h4 class="card-title font-display fw-bold" style="color: var(--text-principal);">Keke de Chocolate</h4>
-            <p class="card-text text-suave flex-grow-1" style="font-size: 0.9rem;">Bizcocho húmedo de chocolate, receta clásica.</p>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div>
-                <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 22.00</span>
-                <span class="text-suave" style="font-size: 0.75rem;">Tamaño familiar</span>
+            <p class="card-text text-suave mb-2" style="font-size: 0.9rem;">Bizcocho húmedo de chocolate, receta clásica.</p>
+            <ul class="list-unstyled text-suave mb-3" style="font-size: 0.78rem;">
+              <li class="mb-1"><i class="bi bi-egg-fried me-1 text-dorado"></i>Cacao de buena calidad y baño de chocolate</li>
+              <li><i class="bi bi-clock-history me-1 text-dorado"></i>Preparado bajo pedido, con 24h de anticipación</li>
+            </ul>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between border-top border-linea pt-2 mb-1" style="font-size: 0.85rem;">
+                <span class="text-suave">Mediano</span>
+                <span class="fw-bold text-dorado">S/ 16.00</span>
               </div>
-              <button class="btn btn-outline-dorado btn-sm btn-pedir px-3">Pedir</button>
+              <div class="d-flex justify-content-between mb-3" style="font-size: 0.85rem;">
+                <span class="text-suave">Familiar</span>
+                <span class="fw-bold text-dorado">S/ 22.00</span>
+              </div>
+              <button class="btn btn-outline-dorado btn-sm btn-pedir w-100">Pedir</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4 producto" data-categoria="clasico" data-sabor="Keke de Naranja">
+      <div class="col-12 col-md-6 col-lg-4 producto" data-tipo="keke" data-categoria="clasico" data-sabor="Keke de Naranja">
         <div class="card h-100 bg-tarjeta border-linea producto-card shadow-sm">
           <img src="img/naranja.jpg" class="card-img-top producto-img" alt="Keke de naranja">
           <div class="card-body d-flex flex-column p-4">
             <h4 class="card-title font-display fw-bold" style="color: var(--text-principal);">Keke de Naranja</h4>
-            <p class="card-text text-suave flex-grow-1" style="font-size: 0.9rem;">Aroma de naranja natural, esponjoso y ligero.</p>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div>
-                <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 20.00</span>
-                <span class="text-suave" style="font-size: 0.75rem;">Tamaño familiar</span>
+            <p class="card-text text-suave mb-2" style="font-size: 0.9rem;">Aroma de naranja natural, esponjoso y ligero.</p>
+            <ul class="list-unstyled text-suave mb-3" style="font-size: 0.78rem;">
+              <li class="mb-1"><i class="bi bi-egg-fried me-1 text-dorado"></i>Ralladura y jugo de naranja natural</li>
+              <li><i class="bi bi-clock-history me-1 text-dorado"></i>Preparado bajo pedido, con 24h de anticipación</li>
+            </ul>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between border-top border-linea pt-2 mb-1" style="font-size: 0.85rem;">
+                <span class="text-suave">Mediano</span>
+                <span class="fw-bold text-dorado">S/ 15.00</span>
               </div>
-              <button class="btn btn-outline-dorado btn-sm btn-pedir px-3">Pedir</button>
+              <div class="d-flex justify-content-between mb-3" style="font-size: 0.85rem;">
+                <span class="text-suave">Familiar</span>
+                <span class="fw-bold text-dorado">S/ 20.00</span>
+              </div>
+              <button class="btn btn-outline-dorado btn-sm btn-pedir w-100">Pedir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 producto" data-tipo="muffin" data-categoria="muffins chocolate" data-sabor="Muffins de Chocolate">
+        <div class="card h-100 bg-tarjeta border-linea producto-card shadow-sm">
+          <img src="img/muffins-chocolate.jpg" class="card-img-top producto-img" alt="Muffins de chocolate">
+          <div class="card-body d-flex flex-column p-4">
+            <h4 class="card-title font-display fw-bold" style="color: var(--text-principal);">Muffins de Chocolate</h4>
+            <p class="card-text text-suave mb-2" style="font-size: 0.9rem;">Muffins individuales bien esponjosos, con chispas de chocolate.</p>
+            <ul class="list-unstyled text-suave mb-3" style="font-size: 0.78rem;">
+              <li class="mb-1"><i class="bi bi-box-seam me-1 text-dorado"></i>Se venden por caja, mínimo 6 unidades</li>
+              <li><i class="bi bi-clock-history me-1 text-dorado"></i>Horneados el mismo día de tu pedido</li>
+            </ul>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between align-items-center border-top border-linea pt-2 mb-3">
+                <div>
+                  <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 2.50 <small class="fs-6 fw-normal text-suave">c/u</small></span>
+                  <span class="text-suave" style="font-size: 0.75rem;">Caja x6: S/ 15.00</span>
+                </div>
+              </div>
+              <button class="btn btn-outline-dorado btn-sm btn-pedir w-100">Pedir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 producto" data-tipo="muffin" data-categoria="muffins frutal" data-sabor="Muffins de Arándanos">
+        <div class="card h-100 bg-tarjeta border-linea producto-card shadow-sm">
+          <img src="img/muffins-arandanos.jpg" class="card-img-top producto-img" alt="Muffins de arándanos">
+          <div class="card-body d-flex flex-column p-4">
+            <h4 class="card-title font-display fw-bold" style="color: var(--text-principal);">Muffins de Arándanos</h4>
+            <p class="card-text text-suave mb-2" style="font-size: 0.9rem;">Con arándanos naturales, ideales para acompañar tu café.</p>
+            <ul class="list-unstyled text-suave mb-3" style="font-size: 0.78rem;">
+              <li class="mb-1"><i class="bi bi-box-seam me-1 text-dorado"></i>Se venden por caja, mínimo 6 unidades</li>
+              <li><i class="bi bi-clock-history me-1 text-dorado"></i>Horneados el mismo día de tu pedido</li>
+            </ul>
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between align-items-center border-top border-linea pt-2 mb-3">
+                <div>
+                  <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 2.70 <small class="fs-6 fw-normal text-suave">c/u</small></span>
+                  <span class="text-suave" style="font-size: 0.75rem;">Caja x6: S/ 16.00</span>
+                </div>
+              </div>
+              <button class="btn btn-outline-dorado btn-sm btn-pedir w-100">Pedir</button>
             </div>
           </div>
         </div>
@@ -371,18 +441,29 @@
             <input type="text" class="form-control py-2" id="nombre" name="nombre" placeholder="Ej. María López" required>
           </div>
 
+          <div class="mb-4">
+            <label for="tipoPedido" class="form-label fw-medium" style="font-size: 0.9rem;">¿Qué deseas pedir?</label>
+            <select class="form-select py-2" id="tipoPedido" name="tipoPedido">
+              <option value="keke" selected>Keke</option>
+              <option value="muffin">Muffins</option>
+            </select>
+          </div>
+
           <div class="row mb-4">
             <div class="col-md-6 mb-4 mb-md-0">
               <label for="telefono" class="form-label fw-medium" style="font-size: 0.9rem;">Tu teléfono</label>
               <input type="tel" class="form-control py-2" id="telefono" name="telefono" placeholder="Ej. 999 999 999" required>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" id="bloqueTamano">
               <label for="tamano" class="form-label fw-medium" style="font-size: 0.9rem;">Tamaño</label>
               <select class="form-select py-2" id="tamano" name="tamano">
-                <option value="Individual">Individual</option>
-                <option value="Mediano">Mediano (6 porciones)</option>
-                <option value="Familiar" selected>Familiar (10-12 porciones)</option>
+                <option value="Mediano">Mediano</option>
+                <option value="Familiar" selected>Familiar</option>
               </select>
+            </div>
+            <div class="col-md-6 d-none" id="bloqueCantidad">
+              <label for="cantidad" class="form-label fw-medium" style="font-size: 0.9rem;">Cantidad de muffins</label>
+              <input type="number" class="form-control py-2" id="cantidad" name="cantidad" min="1" step="1" value="1">
             </div>
           </div>
 
@@ -455,8 +536,8 @@
     <h2 class="font-display fw-bold mb-3">Hagamos tu pedido</h2>
     <p class="text-suave mx-auto mb-4" style="max-width: 460px;">Escríbenos directamente y cuéntanos qué keke tienes en mente.</p>
 
-    <!-- Link Exclusivo de WhatsApp -->
-    <a href="https://wa.me/message/PDOO4NMU3PD7P1" target="_blank" class="btn btn-dorado px-5 py-3 fw-bold shadow-sm">
+    <!-- Link directo de WhatsApp (usa el mismo número configurado en el script) -->
+    <a href="https://api.whatsapp.com/send?phone=51999999999&text=¡Hola!%20Quiero%20hacer%20una%20consulta%20sobre%20un%20keke." target="_blank" class="btn btn-dorado px-5 py-3 fw-bold shadow-sm">
       <i class="bi bi-whatsapp me-2"></i>Ir a WhatsApp
     </a>
   </div>
@@ -508,6 +589,24 @@
   actualizarIconosTema(htmlElement.getAttribute('data-bs-theme'));
 
   // ============================================================
+  // CERRAR EL MENÚ HAMBURGUESA AL HACER CLIC EN UN ENLACE
+  // ============================================================
+  const navbarNavEl = document.getElementById('navbarNav');
+  const enlacesMenu = navbarNavEl.querySelectorAll('.nav-link-cierra');
+
+  enlacesMenu.forEach((enlace) => {
+    enlace.addEventListener('click', () => {
+      const instanciaCollapse = bootstrap.Collapse.getInstance(navbarNavEl);
+      if (instanciaCollapse) {
+        instanciaCollapse.hide();
+      } else {
+        // Si aún no existe una instancia (primer clic), la creamos y la ocultamos
+        new bootstrap.Collapse(navbarNavEl, { toggle: false }).hide();
+      }
+    });
+  });
+
+  // ============================================================
   // FILTRO DE CATEGORÍAS 
   // ============================================================
   const filtroCategorias = document.getElementById('filtroCategorias');
@@ -531,7 +630,33 @@
   });
 
   // ============================================================
-  // BOTÓN "PEDIR" EN KEKES -> AUTOCOMPLETA FORMULARIO
+  // ALTERNAR BLOQUE "TAMAÑO" (KEKE) / "CANTIDAD" (MUFFINS) EN EL FORMULARIO
+  // ============================================================
+  const tipoPedidoSelect = document.getElementById('tipoPedido');
+  const bloqueTamano = document.getElementById('bloqueTamano');
+  const bloqueCantidad = document.getElementById('bloqueCantidad');
+  const tamanoSelect = document.getElementById('tamano');
+  const cantidadInput = document.getElementById('cantidad');
+
+  function actualizarBloquesPedido() {
+    if (tipoPedidoSelect.value === 'muffin') {
+      bloqueTamano.classList.add('d-none');
+      bloqueCantidad.classList.remove('d-none');
+      tamanoSelect.disabled = true;
+      cantidadInput.disabled = false;
+    } else {
+      bloqueTamano.classList.remove('d-none');
+      bloqueCantidad.classList.add('d-none');
+      tamanoSelect.disabled = false;
+      cantidadInput.disabled = true;
+    }
+  }
+
+  tipoPedidoSelect.addEventListener('change', actualizarBloquesPedido);
+  actualizarBloquesPedido();
+
+  // ============================================================
+  // BOTÓN "PEDIR" EN KEKES O MUFFINS -> AUTOCOMPLETA FORMULARIO
   // ============================================================
   const campoSabor = document.getElementById('sabor');
   gridProductos.addEventListener('click', (e) => {
@@ -540,22 +665,58 @@
 
     const tarjeta = boton.closest('.producto');
     const sabor = tarjeta.dataset.sabor;
+    const tipo = tarjeta.dataset.tipo || 'keke';
+
     if (sabor) campoSabor.value = sabor;
+    tipoPedidoSelect.value = tipo;
+    actualizarBloquesPedido();
 
     document.getElementById('personalizado').scrollIntoView({ behavior: 'smooth' });
   });
 
   // ============================================================
-  // FORMULARIO "HAZ TU PEDIDO" -> ENVÍO A WHATSAPP
+  // FORMULARIO "HAZ TU PEDIDO" -> ENVÍO A WHATSAPP CON TODOS LOS DATOS
   // ============================================================
-  const LINK_WHATSAPP = "https://wa.me/message/PDOO4NMU3PD7P1";
+  // ⚠️ IMPORTANTE: reemplaza el número de abajo por tu WhatsApp real,
+  // con código de país y SIN espacios, signos + ni guiones.
+  // Ejemplo Perú: "51987654321"
+  const NUMERO_WHATSAPP = "51912260372";
+
   const formPedido = document.getElementById('formPedido');
 
   formPedido.addEventListener('submit', function(e){
     e.preventDefault();
 
-    // Redirige al link exacto que solicitaste
-    window.open(LINK_WHATSAPP, '_blank');
+    if (!formPedido.checkValidity()) {
+      formPedido.reportValidity();
+      return;
+    }
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const tipo = tipoPedidoSelect.value;
+    const sabor = campoSabor.value.trim();
+    const detalles = document.getElementById('detalles').value.trim();
+
+    let mensaje = `¡Hola! Quiero hacer un pedido 🍰\n\n`;
+    mensaje += `*Nombre:* ${nombre}\n`;
+    mensaje += `*Teléfono:* ${telefono}\n`;
+    mensaje += `*Producto:* ${tipo === 'muffin' ? 'Muffins' : 'Keke'}\n`;
+
+    if (tipo === 'muffin') {
+      mensaje += `*Cantidad:* ${cantidadInput.value} unidades\n`;
+    } else {
+      mensaje += `*Tamaño:* ${tamanoSelect.value}\n`;
+    }
+
+    mensaje += `*Sabor:* ${sabor}\n`;
+    if (detalles) {
+      mensaje += `*Detalles:* ${detalles}\n`;
+    }
+
+    const linkFinal = `https://api.whatsapp.com/send?phone=$51912260372&text=${encodeURIComponent(mensaje)}`;
+
+    window.open(linkFinal, '_blank');
   });
 </script>
 
