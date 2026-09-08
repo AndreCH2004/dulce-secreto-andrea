@@ -5,24 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Dulce Secreto de Andrea | Pastelería Artesanal</title>
 <meta name="description" content="Kekes artesanales preparados a tu gusto. Elige tu sabor y arma tu pedido.">
-
-<!-- ============================================================
-     FUENTES
-============================================================= -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!-- BOOTSTRAP 5.3 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- BOOTSTRAP ICONS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 <style>
-  /* ============================================================
-     VARIABLES GLOBALES Y TEMAS (MODO OSCURO Y CLARO)
-  ============================================================= */
   :root {
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Jost', sans-serif;
@@ -41,10 +30,10 @@
     --form-bg: #1e1a14;
   }
 
-  /* TEMA CLARO (Crema elegante) — blanco cálido, no puro #FFFFFF */
+  /* TEMA CLARO (Crema elegante)*/
   [data-bs-theme="light"] {
-    --bg-principal: #FAF7F1; /* Crema suave */
-    --bg-tarjeta: #FFFDF8;   /* Marfil, en vez de blanco puro */
+    --bg-principal: #FAF7F1; 
+    --bg-tarjeta: #FFFDF8;  
     --text-principal: #2A251E;
     --text-suave: #5C554D;
     --linea: #E6DFD1;
@@ -244,6 +233,10 @@
         <strong class="d-block font-display text-dorado fs-5">Artesanal</strong>
         <span class="text-suave" style="font-size: 0.85rem;">Preparado por pedido</span>
       </div>
+      <div class="col-md-4 py-3">
+        <strong class="d-block font-display text-dorado fs-5">Kekes 100% saludables</strong>
+        <span class="text-suave" style="font-size: 0.85rem;">Ricos y saludables</span>
+      </div>
     </div>
   </div>
 </section>
@@ -263,7 +256,6 @@
       <button class="btn btn-outline-dorado filtro-btn px-3 py-1" data-filtro="chocolate">Chocolate</button>
       <button class="btn btn-outline-dorado filtro-btn px-3 py-1" data-filtro="frutal">Frutal</button>
       <button class="btn btn-outline-dorado filtro-btn px-3 py-1" data-filtro="clasico">Clásico</button>
-      <button class="btn btn-outline-dorado filtro-btn px-3 py-1" data-filtro="fit">Fit</button>
       <button class="btn btn-outline-dorado filtro-btn px-3 py-1" data-filtro="muffins">Muffins</button>
     </div>
 
@@ -358,8 +350,7 @@
             <div class="mt-auto">
               <div class="d-flex justify-content-between align-items-center border-top border-linea pt-2 mb-3">
                 <div>
-                  <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 2.50 <small class="fs-6 fw-normal text-suave">c/u</small></span>
-                  <span class="text-suave" style="font-size: 0.75rem;">Caja x6: S/ 15.00</span>
+                  <span class="d-block font-display text-dorado fs-5 fw-bold">Caja x6: <small class="fs-6 fw-normal text-suave">S/ 15.00</small></span>
                 </div>
               </div>
               <button class="btn btn-outline-dorado btn-sm btn-pedir w-100">Pedir</button>
@@ -381,8 +372,7 @@
             <div class="mt-auto">
               <div class="d-flex justify-content-between align-items-center border-top border-linea pt-2 mb-3">
                 <div>
-                  <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 2.70 <small class="fs-6 fw-normal text-suave">c/u</small></span>
-                  <span class="text-suave" style="font-size: 0.75rem;">Caja x6: S/ 16.00</span>
+                  <span class="d-block font-display text-dorado fs-5 fw-bold">Caja x6: <small class="fs-6 fw-normal text-suave">S/ 15.00</small></span>
                 </div>
               </div>
               <button class="btn btn-outline-dorado btn-sm btn-pedir w-100">Pedir</button>
@@ -390,35 +380,6 @@
           </div>
         </div>
       </div>
-
-
-      <!-- =========================================================================
-           🛒 PLANTILLA PARA AGREGAR MÁS KEKES
-           Copia el bloque <div> que empieza abajo y pégalo justo antes de este
-           comentario cuando quieras agregar un producto nuevo.
-      ========================================================================== -->
-
-      <!-- INICIO DEL NUEVO KEKE -->
-      <!--
-      <div class="col-12 col-md-6 col-lg-4 producto" data-categoria="escribe-tu-categoria" data-sabor="Escribe el sabor para el formulario">
-        <div class="card h-100 bg-tarjeta border-linea producto-card shadow-sm">
-          <img src="ruta-de-tu-imagen.jpg" class="card-img-top producto-img" alt="Descripción de la imagen">
-          <div class="card-body d-flex flex-column p-4">
-            <h4 class="card-title font-display fw-bold" style="color: var(--text-principal);">Nombre del Nuevo Keke</h4>
-            <p class="card-text text-suave flex-grow-1" style="font-size: 0.9rem;">Breve descripción de los ingredientes.</p>
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              <div>
-                <span class="d-block font-display text-dorado fs-5 fw-bold">S/ 00.00</span>
-                <span class="text-suave" style="font-size: 0.75rem;">Tamaño deseado</span>
-              </div>
-              <button class="btn btn-outline-dorado btn-sm btn-pedir px-3">Pedir</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
-      <!-- FIN DEL NUEVO KEKE -->
-
     </div>
   </div>
 </section>
@@ -462,20 +423,98 @@
               </select>
             </div>
             <div class="col-md-6 d-none" id="bloqueCantidad">
-              <label for="cantidad" class="form-label fw-medium" style="font-size: 0.9rem;">Cantidad de muffins</label>
+              <label for="cantidad" class="form-label fw-medium" style="font-size: 0.9rem;">Cantidad de cajas (x6 unidades)</label>
               <input type="number" class="form-control py-2" id="cantidad" name="cantidad" min="1" step="1" value="1">
+              <div class="form-text text-suave mt-1">Los muffins solo se venden por caja de 6 unidades.</div>
             </div>
           </div>
 
-          <div class="mb-4">
-            <label for="sabor" class="form-label fw-medium" style="font-size: 0.9rem;">Sabor que deseas</label>
-            <input type="text" class="form-control py-2" id="sabor" name="sabor" placeholder="Ej. chocolate con naranja, o el sabor que se te antoje" required>
-            <div class="form-text text-suave mt-2">Puedes pedir un sabor de la lista o describir la combinación que prefieras.</div>
+          <div class="mb-4" id="bloqueSaborKeke">
+            <label for="saborKeke" class="form-label fw-medium" style="font-size: 0.9rem;">Sabor que deseas</label>
+            <select class="form-select py-2" id="saborKeke" name="saborKeke">
+              <option value="Keke de Plátano con Chocolate" selected>Keke de Plátano con Chocolate</option>
+              <option value="Keke de Chocolate">Keke de Chocolate</option>
+              <option value="Keke de Naranja">Keke de Naranja</option>
+              <option value="otro">Otro (quiero un sabor distinto)</option>
+            </select>
+
+            <div class="mt-3 d-none" id="bloqueSaborOtro">
+              <label for="saborOtro" class="form-label fw-medium" style="font-size: 0.9rem;">Cuéntanos el sabor que deseas</label>
+              <input type="text" class="form-control py-2" id="saborOtro" name="saborOtro" placeholder="Ej. chocolate con naranja, o el sabor que se te antoje">
+            </div>
           </div>
 
-          <div class="mb-5">
-            <label for="detalles" class="form-label fw-medium" style="font-size: 0.9rem;">Detalles adicionales</label>
-            <textarea class="form-control py-2" id="detalles" name="detalles" rows="3" placeholder="Ej. sin nueces, para cumpleaños, con dedicatoria..."></textarea>
+          <div class="mb-4 d-none" id="bloqueSaborMuffin">
+            <label for="saborMuffin" class="form-label fw-medium" style="font-size: 0.9rem;">Sabor que deseas</label>
+            <input type="text" class="form-control py-2" id="saborMuffin" name="saborMuffin" placeholder="Ej. chocolate, arándanos...">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-medium d-block" style="font-size: 0.9rem;">¿Deseas agregar algo adicional a tu pedido?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="quiereAdicional" id="adicionalSi" value="si">
+              <label class="form-check-label" for="adicionalSi">Sí</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="quiereAdicional" id="adicionalNo" value="no" checked>
+              <label class="form-check-label" for="adicionalNo">No</label>
+            </div>
+
+            <!-- Bloque de adicionales + detalles (oculto hasta que se elija "Sí") -->
+            <div id="bloqueAdicionales" class="d-none mt-3">
+              <div class="border border-linea rounded p-3 mb-3" style="background-color: var(--form-bg);">
+                <p class="text-suave mb-3" style="font-size: 0.82rem;">Marca las opciones que quieras sumar a tu pedido:</p>
+
+                <div class="form-check d-flex justify-content-between align-items-center mb-2">
+                  <span>
+                    <input class="form-check-input adicional-check" type="checkbox" id="adicional1" data-nombre="Dedicatoria escrita" data-precio="5">
+                    <label class="form-check-label" for="adicional1">Dedicatoria escrita</label>
+                  </span>
+                  <span class="text-dorado fw-bold" style="font-size: 0.85rem;">S/ 5.00</span>
+                </div>
+
+                <div class="form-check d-flex justify-content-between align-items-center mb-2">
+                  <span>
+                    <input class="form-check-input adicional-check" type="checkbox" id="adicional2" data-nombre="Vela decorativa" data-precio="3">
+                    <label class="form-check-label" for="adicional2">Vela decorativa</label>
+                  </span>
+                  <span class="text-dorado fw-bold" style="font-size: 0.85rem;">S/ 3.00</span>
+                </div>
+
+                <div class="form-check d-flex justify-content-between align-items-center mb-2">
+                  <span>
+                    <input class="form-check-input adicional-check" type="checkbox" id="adicional3" data-nombre="Topping extra (frutas o chispas)" data-precio="6">
+                    <label class="form-check-label" for="adicional3">Topping extra (frutas o chispas)</label>
+                  </span>
+                  <span class="text-dorado fw-bold" style="font-size: 0.85rem;">S/ 6.00</span>
+                </div>
+
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <span>
+                    <input class="form-check-input adicional-check" type="checkbox" id="adicional4" data-nombre="Empaque de regalo" data-precio="8">
+                    <label class="form-check-label" for="adicional4">Empaque de regalo</label>
+                  </span>
+                  <span class="text-dorado fw-bold" style="font-size: 0.85rem;">S/ 8.00</span>
+                </div>
+              </div>
+
+              <label for="detalles" class="form-label fw-medium" style="font-size: 0.9rem;">Detalles adicionales</label>
+              <textarea class="form-control py-2" id="detalles" name="detalles" rows="3" placeholder="Ej. sin nueces, para cumpleaños, con dedicatoria..."></textarea>
+            </div>
+          </div>
+
+          <div class="border-top border-linea pt-3 mb-4">
+            <div class="d-flex justify-content-between align-items-center" id="filaPrecioFinal">
+              <span class="fw-medium" style="font-size: 1rem;">Precio estimado</span>
+              <span class="font-display fw-bold text-dorado" id="precioFinal" style="font-size: 1.6rem;">S/ 0.00</span>
+            </div>
+            <div class="d-none" id="filaPrecioOtro">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="fw-medium" style="font-size: 0.95rem;">Costo adicional</span>
+                <span class="font-display fw-bold text-dorado" id="precioAdicionalOtro" style="font-size: 1.3rem;">S/ 0.00</span>
+              </div>
+              <p class="text-suave mb-0" style="font-size: 0.82rem;">El precio de tu keke te lo confirma la dueña directamente por WhatsApp según el sabor que elijas. El monto de arriba corresponde solo a lo adicional que agregaste.</p>
+            </div>
           </div>
 
           <button type="submit" class="btn btn-dorado w-100 py-3 fw-bold fs-6">Enviar pedido por WhatsApp</button>
@@ -537,7 +576,7 @@
     <p class="text-suave mx-auto mb-4" style="max-width: 460px;">Escríbenos directamente y cuéntanos qué keke tienes en mente.</p>
 
     <!-- Link directo de WhatsApp (usa el mismo número configurado en el script) -->
-    <a href="https://api.whatsapp.com/send?phone=51999999999&text=¡Hola!%20Quiero%20hacer%20una%20consulta%20sobre%20un%20keke." target="_blank" class="btn btn-dorado px-5 py-3 fw-bold shadow-sm">
+    <a href="https://api.whatsapp.com/send?phone=51930371567&text=¡Hola!%20Quiero%20hacer%20una%20consulta%20sobre%20un%20keke." target="_blank" class="btn btn-dorado px-5 py-3 fw-bold shadow-sm">
       <i class="bi bi-whatsapp me-2"></i>Ir a WhatsApp
     </a>
   </div>
@@ -630,7 +669,7 @@
   });
 
   // ============================================================
-  // ALTERNAR BLOQUE "TAMAÑO" (KEKE) / "CANTIDAD" (MUFFINS) EN EL FORMULARIO
+  // REFERENCIAS DEL FORMULARIO DE PEDIDO
   // ============================================================
   const tipoPedidoSelect = document.getElementById('tipoPedido');
   const bloqueTamano = document.getElementById('bloqueTamano');
@@ -638,27 +677,161 @@
   const tamanoSelect = document.getElementById('tamano');
   const cantidadInput = document.getElementById('cantidad');
 
+  const bloqueSaborKeke = document.getElementById('bloqueSaborKeke');
+  const bloqueSaborMuffin = document.getElementById('bloqueSaborMuffin');
+  const saborKekeSelect = document.getElementById('saborKeke');
+  const saborMuffinInput = document.getElementById('saborMuffin');
+  const bloqueSaborOtro = document.getElementById('bloqueSaborOtro');
+  const saborOtroInput = document.getElementById('saborOtro');
+
+  const radiosAdicional = document.querySelectorAll('input[name="quiereAdicional"]');
+  const bloqueAdicionales = document.getElementById('bloqueAdicionales');
+  const checksAdicionales = document.querySelectorAll('.adicional-check');
+
+  const filaPrecioFinal = document.getElementById('filaPrecioFinal');
+  const filaPrecioOtro = document.getElementById('filaPrecioOtro');
+  const precioFinalEl = document.getElementById('precioFinal');
+  const precioAdicionalOtroEl = document.getElementById('precioAdicionalOtro');
+
+  // Precios de referencia (según catálogo). Los muffins solo se venden por caja x6.
+  const PRECIOS_KEKE = {
+    "Keke de Plátano con Chocolate": { Mediano: 18.00, Familiar: 25.00 },
+    "Keke de Chocolate": { Mediano: 16.00, Familiar: 22.00 },
+    "Keke de Naranja": { Mediano: 15.00, Familiar: 20.00 }
+  };
+  const PRECIO_MUFFIN_CAJA = 15.00; // precio por caja de 6 unidades
+
+  // ============================================================
+  // ALTERNAR BLOQUE "TAMAÑO/SABOR KEKE" Y "CANTIDAD/SABOR MUFFIN"
+  // ============================================================
   function actualizarBloquesPedido() {
     if (tipoPedidoSelect.value === 'muffin') {
       bloqueTamano.classList.add('d-none');
       bloqueCantidad.classList.remove('d-none');
       tamanoSelect.disabled = true;
       cantidadInput.disabled = false;
+
+      bloqueSaborKeke.classList.add('d-none');
+      bloqueSaborMuffin.classList.remove('d-none');
+      saborKekeSelect.disabled = true;
+      saborMuffinInput.disabled = false;
+      saborMuffinInput.required = true;
     } else {
       bloqueTamano.classList.remove('d-none');
       bloqueCantidad.classList.add('d-none');
       tamanoSelect.disabled = false;
       cantidadInput.disabled = true;
+
+      bloqueSaborKeke.classList.remove('d-none');
+      bloqueSaborMuffin.classList.add('d-none');
+      saborKekeSelect.disabled = false;
+      saborMuffinInput.disabled = true;
+      saborMuffinInput.required = false;
     }
+    actualizarSaborOtro();
   }
 
+  // ============================================================
+  // MOSTRAR/OCULTAR CAMPO "OTRO SABOR" (SOLO PARA KEKE)
+  // ============================================================
+  function actualizarSaborOtro() {
+    const esOtro = tipoPedidoSelect.value === 'keke' && saborKekeSelect.value === 'otro';
+    if (esOtro) {
+      bloqueSaborOtro.classList.remove('d-none');
+      saborOtroInput.disabled = false;
+      saborOtroInput.required = true;
+    } else {
+      bloqueSaborOtro.classList.add('d-none');
+      saborOtroInput.disabled = true;
+      saborOtroInput.required = false;
+    }
+    calcularPrecioFinal();
+  }
+
+  // ============================================================
+  // MOSTRAR/OCULTAR BLOQUE DE ADICIONALES + DETALLES
+  // ============================================================
+  function actualizarMenuAdicionales() {
+    const quiere = document.querySelector('input[name="quiereAdicional"]:checked').value;
+    if (quiere === 'si') {
+      bloqueAdicionales.classList.remove('d-none');
+    } else {
+      bloqueAdicionales.classList.add('d-none');
+      checksAdicionales.forEach(chk => chk.checked = false);
+    }
+    calcularPrecioFinal();
+  }
+
+  // ============================================================
+  // CÁLCULO DEL PRECIO (base + adicionales, o solo adicionales si el sabor es "Otro")
+  // ============================================================
+  function obtenerPrecioBase() {
+    if (tipoPedidoSelect.value === 'muffin') {
+      const cajas = parseInt(cantidadInput.value, 10) || 0;
+      return cajas * PRECIO_MUFFIN_CAJA;
+    }
+    if (saborKekeSelect.value === 'otro') return 0; // precio a confirmar por WhatsApp
+    const precios = PRECIOS_KEKE[saborKekeSelect.value];
+    return precios ? (precios[tamanoSelect.value] || 0) : 0;
+  }
+
+  function obtenerAdicionalesSeleccionados() {
+    const quiere = document.querySelector('input[name="quiereAdicional"]:checked').value;
+    if (quiere !== 'si') return [];
+    return Array.from(checksAdicionales)
+      .filter(chk => chk.checked)
+      .map(chk => ({ nombre: chk.dataset.nombre, precio: parseFloat(chk.dataset.precio) }));
+  }
+
+  function calcularPrecioFinal() {
+    const modoOtro = tipoPedidoSelect.value === 'keke' && saborKekeSelect.value === 'otro';
+    const adicionales = obtenerAdicionalesSeleccionados();
+    const totalAdicionales = adicionales.reduce((suma, a) => suma + a.precio, 0);
+
+    if (modoOtro) {
+      filaPrecioFinal.classList.add('d-none');
+      filaPrecioOtro.classList.remove('d-none');
+      precioAdicionalOtroEl.textContent = `S/ ${totalAdicionales.toFixed(2)}`;
+      return totalAdicionales;
+    }
+
+    filaPrecioFinal.classList.remove('d-none');
+    filaPrecioOtro.classList.add('d-none');
+    const base = obtenerPrecioBase();
+    const total = base + totalAdicionales;
+    precioFinalEl.textContent = `S/ ${total.toFixed(2)}`;
+    return total;
+  }
+
+  // ============================================================
+  // OBTENER EL SABOR FINAL SEGÚN EL TIPO DE PEDIDO Y LA SELECCIÓN
+  // ============================================================
+  function obtenerSaborActual() {
+    if (tipoPedidoSelect.value === 'muffin') {
+      return saborMuffinInput.value.trim();
+    }
+    if (saborKekeSelect.value === 'otro') {
+      return saborOtroInput.value.trim();
+    }
+    return saborKekeSelect.value;
+  }
+
+  // ============================================================
+  // EVENTOS
+  // ============================================================
   tipoPedidoSelect.addEventListener('change', actualizarBloquesPedido);
+  saborKekeSelect.addEventListener('change', actualizarSaborOtro);
+  radiosAdicional.forEach(radio => radio.addEventListener('change', actualizarMenuAdicionales));
+  checksAdicionales.forEach(chk => chk.addEventListener('change', calcularPrecioFinal));
+  tamanoSelect.addEventListener('change', calcularPrecioFinal);
+  cantidadInput.addEventListener('input', calcularPrecioFinal);
+
+  // Estado inicial del formulario
   actualizarBloquesPedido();
 
   // ============================================================
   // BOTÓN "PEDIR" EN KEKES O MUFFINS -> AUTOCOMPLETA FORMULARIO
   // ============================================================
-  const campoSabor = document.getElementById('sabor');
   gridProductos.addEventListener('click', (e) => {
     const boton = e.target.closest('.btn-pedir');
     if (!boton) return;
@@ -667,20 +840,25 @@
     const sabor = tarjeta.dataset.sabor;
     const tipo = tarjeta.dataset.tipo || 'keke';
 
-    if (sabor) campoSabor.value = sabor;
     tipoPedidoSelect.value = tipo;
     actualizarBloquesPedido();
+
+    if (tipo === 'muffin') {
+      if (sabor) saborMuffinInput.value = sabor;
+    } else if (sabor) {
+      // Si el sabor de la tarjeta coincide con una opción del menú, se selecciona directamente;
+      // si no, se usa "Otro" y se coloca el sabor en el campo de texto.
+      const opcionExiste = Array.from(saborKekeSelect.options).some(o => o.value === sabor);
+      saborKekeSelect.value = opcionExiste ? sabor : 'otro';
+      if (!opcionExiste) saborOtroInput.value = sabor;
+      actualizarSaborOtro();
+    }
 
     document.getElementById('personalizado').scrollIntoView({ behavior: 'smooth' });
   });
 
-  // ============================================================
-  // FORMULARIO "HAZ TU PEDIDO" -> ENVÍO A WHATSAPP CON TODOS LOS DATOS
-  // ============================================================
-  // ⚠️ IMPORTANTE: reemplaza el número de abajo por tu WhatsApp real,
-  // con código de país y SIN espacios, signos + ni guiones.
-  // Ejemplo Perú: "51987654321"
-  const NUMERO_WHATSAPP = "51912260372";
+
+  const NUMERO_WHATSAPP = "51930371567";
 
   const formPedido = document.getElementById('formPedido');
 
@@ -695,8 +873,9 @@
     const nombre = document.getElementById('nombre').value.trim();
     const telefono = document.getElementById('telefono').value.trim();
     const tipo = tipoPedidoSelect.value;
-    const sabor = campoSabor.value.trim();
+    const sabor = obtenerSaborActual();
     const detalles = document.getElementById('detalles').value.trim();
+    const modoOtro = tipo === 'keke' && saborKekeSelect.value === 'otro';
 
     let mensaje = `¡Hola! Quiero hacer un pedido 🍰\n\n`;
     mensaje += `*Nombre:* ${nombre}\n`;
@@ -704,17 +883,35 @@
     mensaje += `*Producto:* ${tipo === 'muffin' ? 'Muffins' : 'Keke'}\n`;
 
     if (tipo === 'muffin') {
-      mensaje += `*Cantidad:* ${cantidadInput.value} unidades\n`;
+      mensaje += `*Cantidad:* ${cantidadInput.value} caja(s) x6 unidades\n`;
     } else {
       mensaje += `*Tamaño:* ${tamanoSelect.value}\n`;
     }
 
     mensaje += `*Sabor:* ${sabor}\n`;
+
+    const adicionales = obtenerAdicionalesSeleccionados();
+    if (adicionales.length > 0) {
+      mensaje += `*Adicionales:*\n`;
+      adicionales.forEach(a => {
+        mensaje += `  - ${a.nombre} (S/ ${a.precio.toFixed(2)})\n`;
+      });
+    }
+
     if (detalles) {
       mensaje += `*Detalles:* ${detalles}\n`;
     }
 
-    const linkFinal = `https://api.whatsapp.com/send?phone=$51912260372&text=${encodeURIComponent(mensaje)}`;
+    const total = calcularPrecioFinal();
+    if (modoOtro) {
+      mensaje += `\n*Costo adicional (extras): S/ ${total.toFixed(2)}*\n`;
+      mensaje += `_El precio del keke se confirma directamente por WhatsApp según el sabor elegido._`;
+    } else {
+      mensaje += `\n*Precio estimado: S/ ${total.toFixed(2)}*\n`;
+      mensaje += `_(precio referencial, puede variar según el sabor final)_`;
+    }
+
+    const linkFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensaje)}`;
 
     window.open(linkFinal, '_blank');
   });
