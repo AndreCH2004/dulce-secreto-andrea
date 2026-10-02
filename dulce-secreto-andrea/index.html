@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Dulce Secreto de Andrea | Pastelería Artesanal</title>
+<meta name="description" content="Kekes y muffins artesanales preparados a tu gusto. Elige tu sabor, arma tu pedido y envíalo por WhatsApp.">
+<meta name="theme-color" content="#17140f">
+
+<!-- SEO para compartir por WhatsApp / redes (Open Graph).
+     IMPORTANTE: WhatsApp solo muestra la imagen y abre el enlace si og:image y og:url
+     son direcciones completas (empiezan con https://). Al publicar en GitHub Pages,
+     reemplaza USUARIO y REPO por los tuyos (por ejemplo:
+       https://andrea.github.io/dulce-secreto/ y
+       https://andrea.github.io/dulce-secreto/img/logo/logo-empresa.jpeg ). -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="El Dulce Secreto de Andrea | Pastelería Artesanal">
+<meta property="og:description" content="Kekes artesanales preparados a tu gusto. Elige tu sabor y arma tu pedido.">
+<meta property="og:image" content="https://USUARIO.github.io/REPO/img/logo/logo-empresa.jpeg"> <!-- [EDITAR AQUÍ AL PUBLICAR] -->
+<meta property="og:url" content="https://USUARIO.github.io/REPO/">                              <!-- [EDITAR AQUÍ AL PUBLICAR] -->
+
+<!-- Favicon: se usa el logo del negocio -->
+<link rel="icon" type="image/jpeg" href="img/logo/logo-empresa.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Lee el tema guardado ANTES de pintar la página (evita parpadeo) -->
+<script>
+  (function () {
+    try {
+      const guardado = localStorage.getItem("dulceSecretoTema");
+      if (guardado === "light" || guardado === "dark") {
+        document.documentElement.setAttribute("data-bs-theme", guardado);
+      }
+    } catch (e) { /* si el navegador bloquea localStorage, se usa el tema oscuro por defecto */ }
+  })();
+</script>
+</head>
+<body>
+
+<!-- Saltar al contenido (accesibilidad) -->
+<a href="#productos" class="visually-hidden-focusable btn btn-dorado position-absolute m-2" style="z-index:2000;">Saltar al contenido</a>
+
+<!-- =================== ENCABEZADO =================== -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-custom py-3" aria-label="Navegación principal">
+  <div class="container">
+    <!-- Marca -->
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#" aria-label="El Dulce Secreto de Andrea, inicio">
+      <div class="marca-logo" aria-hidden="true">A</div>
+      <div class="d-flex flex-column lh-1">
+        <span class="font-display fw-bold fs-5 m-0 p-0" style="color: var(--text-principal);">El Dulce Secreto</span>
+        <span class="text-dorado text-uppercase mt-1" style="font-size: 0.6rem; letter-spacing: 2px;">de Andrea</span>
+      </div>
+    </a>
+
+    <!-- Botones móvil -->
+    <div class="d-flex align-items-center gap-2 d-lg-none">
+      <button class="btn btn-sm btn-outline-secondary border-0 btn-tema" id="themeToggleMobile" aria-label="Cambiar tema claro u oscuro">
+        <i class="bi bi-moon-stars-fill" id="iconMobile"></i>
+      </button>
+      <button class="navbar-toggler icono-personalizado border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <!-- Enlaces -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center gap-3">
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#productos">Kekes</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#personalizado">Hacer pedido</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#preguntas">Preguntas</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link text-suave nav-link-cierra" href="#contacto">Contacto</a></li>
+        <li class="nav-item d-none d-lg-block">
+          <button class="btn btn-sm btn-outline-secondary border-0 btn-tema" id="themeToggleDesktop" aria-label="Cambiar tema claro u oscuro">
+            <i class="bi bi-moon-stars-fill" id="iconDesktop"></i>
+          </button>
+        </li>
+        <!-- Carrito en el menú (escritorio) -->
+        <li class="nav-item d-none d-lg-block">
+          <button class="btn btn-outline-dorado px-3 py-2 posicion-contador" data-bs-toggle="offcanvas" data-bs-target="#panelCarrito" aria-label="Abrir mi pedido">
+            <i class="bi bi-basket2"></i>
+            <span class="contador-carrito d-none" id="contadorCarritoMenu">0</span>
+          </button>
+        </li>
+        <li class="nav-item ms-lg-2">
+          <a href="#personalizado" class="btn btn-outline-dorado px-4 py-2 nav-link-cierra">Hacer pedido</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="py-5 text-center mt-4">
+  <div class="container py-5">
+    <span class="filete mb-3">Pastelería artesanal</span>
+    <h1 class="font-display fw-bold mb-3" style="font-size: clamp(2.5rem, 5vw, 4rem);">
+      Kekes preparados<br>
+      <em class="text-dorado" style="font-style: italic;">a tu gusto</em>
+    </h1>
+    <p class="text-suave mx-auto mb-4" style="max-width: 500px; font-size: 1.1rem;">
+      Cada keke se prepara artesanalmente según lo que pidas. Elige un sabor de la lista o cuéntanos qué se te antoja.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="#productos" class="btn btn-dorado px-4 py-2">Ver kekes</a>
+      <a href="#personalizado" class="btn btn-outline-dorado px-4 py-2">Hacer pedido</a>
+    </div>
+
+    <!-- Franja de datos: cuadrícula centrada que se reordena en celular,
+         tablet y escritorio sin necesitar columnas vacías para centrar. -->
+    <div class="franja-datos reveal">
+      <div class="franja-dato">
+        <strong class="d-block font-display text-dorado fs-5">Variedad</strong>
+        <span class="text-suave" style="font-size: 0.85rem;">Distintos sabores disponibles</span>
+      </div>
+      <div class="franja-dato">
+        <strong class="d-block font-display text-dorado fs-5">A tu gusto</strong>
+        <span class="text-suave" style="font-size: 0.85rem;">Pedidos personalizados</span>
+      </div>
+      <div class="franja-dato">
+        <strong class="d-block font-display text-dorado fs-5">Artesanal</strong>
+        <span class="text-suave" style="font-size: 0.85rem;">Preparado por pedido</span>
+      </div>
+      <div class="franja-dato">
+        <strong class="d-block font-display text-dorado fs-5">Kekes 100% saludables</strong>
+        <span class="text-suave" style="font-size: 0.85rem;">Ricos y saludables</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PRODUCTOS =================== -->
+<section id="productos" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="filete mb-2">Nuestros kekes</span>
+      <h2 class="font-display fw-bold">Algunos de nuestros sabores</h2>
+      <p class="text-suave mx-auto mt-2" style="max-width: 500px;">Esta es una muestra de lo que preparamos. Si buscas otro sabor o una combinación distinta, elige la tarjeta "Otros sabores".</p>
+    </div>
+
+    <!-- Filtros (se generan desde js/productos.js) -->
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="filtroCategorias" role="group" aria-label="Filtrar productos por categoría"></div>
+
+    <!-- Tarjetas (se generan desde js/productos.js) -->
+    <div class="row g-4" id="gridProductos"></div>
+  </div>
+</section>
+
+<!-- =================== ARMA TU PEDIDO =================== -->
+<section id="personalizado" class="py-5 mt-4" style="background-color: var(--form-bg); border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="filete mb-2">A tu manera</span>
+      <h2 class="font-display fw-bold">Haz tu pedido</h2>
+      <p class="text-suave mx-auto mt-2" style="max-width: 500px;">Agrega tus productos al pedido con el botón de cada tarjeta y completa tus datos aquí. Al finalizar, tu pedido se envía ordenado por WhatsApp.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <form id="formPedido" class="bg-tarjeta p-4 p-md-5 border border-linea rounded shadow-sm reveal" novalidate>
+
+          <div class="mb-4">
+            <label for="nombre" class="form-label fw-medium" style="font-size: 0.9rem;">Tu nombre</label>
+            <input type="text" class="form-control py-2" id="nombre" name="nombre" placeholder="Ej. María López" autocomplete="name" required>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <label for="telefono" class="form-label fw-medium" style="font-size: 0.9rem;">Tu teléfono</label>
+              <input type="tel" class="form-control py-2" id="telefono" name="telefono" placeholder="Ej. 999 999 999" autocomplete="tel" required>
+            </div>
+            <div class="col-md-6">
+              <label for="fechaPedido" class="form-label fw-medium" style="font-size: 0.9rem;">¿Para qué fecha lo necesitas?</label>
+              <input type="date" class="form-control py-2" id="fechaPedido" name="fechaPedido" required>
+              <div class="form-text text-suave mt-1" id="ayudaFecha"></div>
+            </div>
+          </div>
+
+          <!-- Adicionales: se eligen una sola vez por pedido.
+               Los checks se generan desde CONFIG.adicionales (js/config.js) -->
+          <div class="mb-4">
+            <span class="form-label fw-medium d-block" style="font-size: 0.9rem;">¿Deseas agregar algo adicional a tu pedido?</span>
+            <div class="border border-linea rounded p-3" style="background-color: var(--form-bg);">
+              <p class="text-suave mb-3" style="font-size: 0.82rem;">Marca las opciones que quieras sumar a tu pedido (valen para todo el pedido, no por producto):</p>
+              <div id="listaAdicionales"></div>
+            </div>
+
+            <label for="detalles" class="form-label fw-medium mt-3" style="font-size: 0.9rem;">Detalles adicionales</label>
+            <textarea class="form-control py-2" id="detalles" name="detalles" rows="3" placeholder="Ej. sin nueces, para cumpleaños, con dedicatoria..."></textarea>
+          </div>
+
+          <!-- Resumen en vivo del carrito dentro del formulario.
+               Se actualiza en cada cambio del carrito desde js/carrito.js. -->
+          <div class="border-top border-linea pt-3 mb-4" id="resumenPedidoForm" aria-live="polite">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="fw-medium">Resumen de tu pedido</span>
+              <button type="button" class="btn btn-sm btn-outline-dorado" data-bs-toggle="offcanvas" data-bs-target="#panelCarrito">
+                <i class="bi bi-basket2 me-1"></i>Abrir panel
+              </button>
+            </div>
+            <ul id="resumenListaForm" class="list-unstyled text-suave mb-2" style="font-size:0.85rem;"></ul>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-suave" style="font-size:0.85rem;">Total estimado</span>
+              <span class="font-display fw-bold text-dorado" id="resumenTotalForm" style="font-size:1.2rem;">S/ 0.00</span>
+            </div>
+            <p id="resumenAvisoForm" class="text-suave d-none mt-2 mb-0" style="font-size:0.8rem;">
+              <i class="bi bi-exclamation-circle me-1 text-dorado"></i>
+              Tu pedido incluye un producto con <strong>precio por confirmar</strong> por WhatsApp.
+            </p>
+          </div>
+
+          <button type="submit" class="btn btn-dorado w-100 py-3 fw-bold fs-6" id="btnEnviarPedido">
+            <i class="bi bi-whatsapp me-2"></i>Enviar pedido por WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PREGUNTAS FRECUENTES =================== -->
+<section id="preguntas" class="py-5">
+  <div class="container" style="max-width: 800px;">
+    <div class="text-center mb-5 reveal">
+      <span class="filete mb-2">Dudas frecuentes</span>
+      <h2 class="font-display fw-bold">Preguntas frecuentes</h2>
+    </div>
+
+    <div class="accordion reveal" id="acordeonPreguntas">
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta1" aria-expanded="true" aria-controls="pregunta1">
+            ¿Con cuánta anticipación debo pedir?
+          </button>
+        </h3>
+        <div id="pregunta1" class="accordion-collapse collapse show" data-bs-parent="#acordeonPreguntas">
+          <div class="accordion-body">
+            Los kekes se preparan bajo pedido con <strong>24 horas de anticipación</strong>. Los muffins se hornean el mismo día de tu pedido.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta2" aria-expanded="false" aria-controls="pregunta2">
+            ¿Puedo pedir menos de 6 muffins?
+          </button>
+        </h3>
+        <div id="pregunta2" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+          <div class="accordion-body">
+            No, los muffins solo se venden <strong>por caja de 6 unidades</strong> (mínimo 1 caja por sabor).
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta3" aria-expanded="false" aria-controls="pregunta3">
+            ¿Cómo se entrega el pedido?
+          </button>
+        </h3>
+        <div id="pregunta3" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+          <div class="accordion-body">
+            La entrega es en persona, en una zona que coordinamos contigo por WhatsApp al confirmar tu pedido.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta4" aria-expanded="false" aria-controls="pregunta4">
+            ¿Cómo pago mi pedido?
+          </button>
+        </h3>
+        <div id="pregunta4" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+          <div class="accordion-body">
+            Puedes pagar por Yape o Plin, en efectivo, o contra entrega (pagas cuando recibes tu pedido).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SOBRE ANDREA =================== -->
+<section id="nosotros" class="py-5 mt-4">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal">
+        <span class="filete mb-3" style="justify-content: flex-start;">Nuestra historia</span>
+        <h2 class="font-display fw-bold mb-4">El secreto está en cada mordida</h2>
+        <p class="text-suave mb-4" style="font-size: 1.05rem;">
+          En El Dulce Secreto de Andrea preparamos cada keke de forma artesanal,
+          con ingredientes frescos y a partir de lo que cada cliente prefiere.
+        </p>
+
+        <div class="d-flex flex-column gap-4 mt-4">
+          <div class="d-flex gap-3">
+            <div class="rounded-circle mt-1" style="width: 8px; height: 8px; background-color: var(--dorado); flex-shrink: 0;"></div>
+            <div>
+              <h5 class="font-display fw-bold text-dorado mb-1">Variedad de sabores</h5>
+              <p class="text-suave mb-0" style="font-size: 0.9rem;">Distintas combinaciones disponibles</p>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <div class="rounded-circle mt-1" style="width: 8px; height: 8px; background-color: var(--dorado); flex-shrink: 0;"></div>
+            <div>
+              <h5 class="font-display fw-bold text-dorado mb-1">Pedidos a tu gusto</h5>
+              <p class="text-suave mb-0" style="font-size: 0.9rem;">Cada keke se prepara según lo que pidas</p>
+            </div>
+          </div>
+          <div class="d-flex gap-3">
+            <div class="rounded-circle mt-1" style="width: 8px; height: 8px; background-color: var(--dorado); flex-shrink: 0;"></div>
+            <div>
+              <h5 class="font-display fw-bold text-dorado mb-1">Hecho artesanalmente</h5>
+              <p class="text-suave mb-0" style="font-size: 0.9rem;">Cada pedido preparado con dedicación en nuestro establecimiento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal">
+        <div class="rounded overflow-hidden shadow">
+          <!-- Logo vertical 825x1024 (4:5): contain + fondo oscuro para no recortarlo -->
+          <img src="img/logo/logo-empresa.jpeg" alt="Logo de El Dulce Secreto de Andrea" class="img-fluid logo-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACTO =================== -->
+<section id="contacto" class="py-5 text-center mt-4" style="background-color: var(--form-bg); border-top: 1px solid var(--linea);">
+  <div class="container reveal">
+    <h2 class="font-display fw-bold mb-3">Hagamos tu pedido</h2>
+    <p class="text-suave mx-auto mb-4" style="max-width: 460px;">Escríbenos directamente y cuéntanos qué keke tienes en mente.</p>
+
+    <!-- El enlace toma el número automáticamente desde js/config.js -->
+    <a id="enlaceWhatsAppContacto" href="#" target="_blank" rel="noopener" class="btn btn-dorado px-5 py-3 fw-bold shadow-sm">
+      <i class="bi bi-whatsapp me-2"></i>Ir a WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="py-4 text-center border-top border-linea" style="background-color: var(--bg-principal);">
+  <div class="container">
+    <span class="text-suave" style="font-size: 0.85rem;">
+      © 2026 <strong class="text-dorado">El Dulce Secreto de Andrea</strong> — Descubre el secreto en cada mordida.
+    </span>
+  </div>
+</footer>
+
+<!-- =================== PANEL DEL CARRITO (lateral) =================== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="panelCarrito" aria-labelledby="panelCarritoTitulo">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title font-display fw-bold fs-4" id="panelCarritoTitulo">
+      <i class="bi bi-basket2 me-2 text-dorado"></i>Tu pedido
+    </h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+  </div>
+
+  <!-- El cuerpo del panel se divide en dos:
+       - .panel-scroll  → zona que hace scroll (lista de productos)
+       - .panel-pie     → bloque fijo abajo con totales y acciones -->
+  <div class="offcanvas-body d-flex flex-column p-0">
+    <div class="panel-scroll px-3 pt-3">
+      <p id="carritoVacio" class="text-suave text-center my-5">
+        Tu pedido está vacío.<br>Agrega productos desde el catálogo 🍰
+      </p>
+      <div id="listaCarrito"></div>
+    </div>
+
+    <div id="pieCarrito" class="panel-pie d-none">
+      <div class="border-top border-linea pt-3 px-3 pb-3">
+        <div class="d-flex justify-content-between text-suave" style="font-size:0.9rem;">
+          <span>Subtotal</span><span id="subtotalCarrito">S/ 0.00</span>
+        </div>
+        <div class="d-flex justify-content-between text-suave" style="font-size:0.9rem;">
+          <span>Adicionales</span><span id="totalAdicionalesCarrito">S/ 0.00</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <span class="fw-medium">Total estimado</span>
+          <span class="font-display fw-bold text-dorado" id="totalCarrito" style="font-size:1.5rem;">S/ 0.00</span>
+        </div>
+        <p id="avisoPrecioConfirmar" class="text-suave d-none mt-2 mb-0" style="font-size:0.8rem;">
+          <i class="bi bi-exclamation-circle me-1 text-dorado"></i>
+          Tu pedido incluye un producto con <strong>precio por confirmar</strong> por WhatsApp.
+        </p>
+        <div class="d-flex gap-2 mt-3">
+          <button type="button" class="btn btn-outline-dorado py-2 flex-shrink-0" id="btnVaciarPedido" aria-label="Vaciar mi pedido">
+            <i class="bi bi-trash3"></i>
+            <span class="d-none d-sm-inline ms-1">Vaciar</span>
+          </button>
+          <!-- Antes era un <a href="#personalizado"> con data-bs-dismiss, que Bootstrap
+               no dejaba navegar. Ahora es un <button> que cierra el panel y luego
+               hace scroll suave a #personalizado enfocando el campo "Tu nombre". -->
+          <button type="button" class="btn btn-dorado py-2 flex-grow-1" id="btnIrAFormulario">
+            Completar mis datos y enviar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== MODAL DE DETALLE DE PRODUCTO =================== -->
+<div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title font-display fw-bold fs-4" id="modalTitulo">Producto</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar detalle"></button>
+      </div>
+      <div class="modal-body">
+        <div id="modalImagen" class="mb-3"></div>
+        <p class="text-suave mb-2" id="modalDescripcion" style="font-size:0.95rem;"></p>
+        <ul class="list-unstyled text-suave mb-4" id="modalDetalles" style="font-size:0.82rem;"></ul>
+
+        <div id="modalOpciones" class="mb-3"></div>
+
+        <!-- Bloque de "Otros sabores": selector de sabor + campo libre si elige "Otro" -->
+        <div id="modalBloqueSabor" class="mb-3 d-none">
+          <label for="modalSelectorSabor" class="form-label fw-medium" style="font-size:0.9rem;">Sabor</label>
+          <select class="form-select" id="modalSelectorSabor">
+            <option value="">Elige un sabor...</option>
+          </select>
+          <div class="mt-3 d-none" id="modalBloqueOtro">
+            <label for="modalSaborOtro" class="form-label fw-medium" style="font-size:0.9rem;">Cuéntanos el sabor que deseas</label>
+            <input type="text" class="form-control py-2" id="modalSaborOtro" maxlength="60"
+                   placeholder="Ej. chocolate con naranja">
+            <div class="form-text text-suave mt-1">Máx. 60 caracteres. El precio se confirma por WhatsApp.</div>
+          </div>
+          <div class="form-text text-suave mt-2">El precio de todos estos sabores se confirma por WhatsApp.</div>
+        </div>
+      </div>
+      <div class="modal-footer flex-column align-items-stretch">
+        <small class="text-suave d-none mb-2" id="modalMensajeAyuda"></small>
+        <button type="button" class="btn btn-dorado w-100 py-2" id="modalAgregar">
+          <i class="bi bi-basket2 me-1"></i>Agregar al pedido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== MODAL DE CONFIRMACIÓN (vaciar pedido) =================== -->
+<div class="modal fade" id="modalConfirmarVaciar" tabindex="-1" aria-labelledby="modalConfirmarTitulo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title font-display fw-bold fs-5" id="modalConfirmarTitulo">¿Vaciar tu pedido?</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancelar"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-suave mb-0">Se quitarán todos los productos y adicionales que elegiste. Esta acción no se puede deshacer.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dorado" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-dorado" id="btnConfirmarVaciar">Sí, vaciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== BOTONES FLOTANTES =================== -->
+<div class="botones-flotantes" id="botonesFlotantes">
+  <button class="btn-flotante d-none" id="btnArriba" aria-label="Volver arriba">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <button class="btn-flotante" data-bs-toggle="offcanvas" data-bs-target="#panelCarrito" aria-label="Abrir mi pedido">
+    <i class="bi bi-basket2"></i>
+    <span class="contador-carrito d-none" id="contadorCarritoFlotante">0</span>
+  </button>
+</div>
+
+<!-- =================== AVISO (toast) =================== -->
+<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 2000;">
+  <div id="toastCarrito" class="toast" role="status" aria-live="polite">
+    <div class="toast-body d-flex align-items-center gap-2">
+      <i class="bi bi-check-circle-fill text-dorado"></i>
+      <span id="toastMensaje" class="flex-grow-1"></span>
+      <button type="button" id="toastVerPedido" class="btn btn-sm btn-outline-dorado d-none">Ver mi pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- BOOTSTRAP 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Scripts del sitio (el orden importa: primero datos, luego lógica) -->
+<script src="js/config.js"></script>
+<script src="js/productos.js"></script>
+<script src="js/tema.js"></script>
+<script src="js/filtros.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/pedido.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Genera los checks de adicionales desde CONFIG y conecta sus eventos -->
+<script>
+  (function () {
+    const contenedor = document.getElementById("listaAdicionales");
+    /* Se arma el HTML usando escaparHTML (definida en js/carrito.js) para que
+       cualquier texto proveniente de la configuración se escape correctamente. */
+    contenedor.innerHTML = CONFIG.adicionales.map((a, i) => `
+      <div class="form-check d-flex justify-content-between align-items-center ${i < CONFIG.adicionales.length - 1 ? "mb-2" : ""}">
+        <span>
+          <input class="form-check-input adicional-check" type="checkbox" id="adicional-${escaparHTML(a.id)}" data-id-adicional="${escaparHTML(a.id)}">
+          <label class="form-check-label" for="adicional-${escaparHTML(a.id)}">${escaparHTML(a.nombre)}</label>
+        </span>
+        <span class="text-dorado fw-bold" style="font-size: 0.85rem;">${CONFIG.moneda} ${a.precio.toFixed(2)}</span>
+      </div>
+    `).join("");
+
+    /* Re-conecta los eventos de los checks recién creados y pinta el carrito */
+    contenedor.querySelectorAll(".adicional-check").forEach(chk => {
+      chk.addEventListener("change", () => alternarAdicional(chk.dataset.idAdicional, chk.checked));
+    });
+    renderizarCarrito();
+  })();
+</script>
+
+</body>
+</html>

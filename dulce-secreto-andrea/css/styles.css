@@ -1,0 +1,376 @@
+/* ============================================================
+   EL DULCE SECRETO DE ANDREA — Hoja de estilos
+   Tema claro/oscuro, paleta dorada.
+   Para cambiar colores, edita las variables de :root y de cada tema.
+   ============================================================ */
+
+:root {
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+  --dorado: #b6924f;
+  --dorado-hover: #9a7b42;
+  --radio: 4px;
+}
+
+/* TEMA OSCURO (por defecto) */
+[data-bs-theme="dark"] {
+  --bg-principal: #17140f;
+  --bg-tarjeta: #211d16;
+  --text-principal: #ece6d8;
+  --text-suave: #a89e8c;
+  --linea: #3a3327;
+  --form-bg: #1e1a14;
+}
+
+/* TEMA CLARO (crema elegante) */
+[data-bs-theme="light"] {
+  --bg-principal: #FAF7F1;
+  --bg-tarjeta: #FFFDF8;
+  --text-principal: #2A251E;
+  --text-suave: #5C554D;
+  --linea: #E6DFD1;
+  --form-bg: #F5F0E7;
+}
+
+body {
+  background-color: var(--bg-principal);
+  color: var(--text-principal);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Utilidades personalizadas */
+.text-dorado { color: var(--dorado) !important; }
+.bg-tarjeta { background-color: var(--bg-tarjeta); transition: background-color 0.3s ease; }
+.text-suave { color: var(--text-suave) !important; transition: color 0.3s ease; }
+.border-linea { border-color: var(--linea) !important; transition: border-color 0.3s ease; }
+
+/* Botones personalizados */
+.btn-dorado {
+  background-color: var(--dorado);
+  color: #fff;
+  border: 1px solid var(--dorado);
+  transition: all 0.3s;
+  font-weight: 500;
+  border-radius: var(--radio);
+}
+.btn-dorado:hover, .btn-dorado:focus {
+  background-color: var(--dorado-hover);
+  color: #fff;
+  border-color: var(--dorado-hover);
+}
+/* Estado deshabilitado accesible y visible */
+.btn-dorado:disabled, .btn-dorado.disabled {
+  background-color: var(--dorado);
+  border-color: var(--dorado);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-outline-dorado {
+  background-color: transparent;
+  color: var(--dorado);
+  border: 1px solid var(--dorado);
+  transition: all 0.3s;
+  border-radius: var(--radio);
+}
+.btn-outline-dorado:hover, .btn-outline-dorado.activo {
+  background-color: var(--dorado);
+  color: #fff;
+}
+
+/* Filetes decorativos */
+.filete {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  color: var(--dorado); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+}
+.filete::before, .filete::after {
+  content: ""; width: 30px; height: 1px; background-color: var(--linea);
+}
+
+/* Navegación */
+.navbar-custom {
+  background-color: var(--bg-principal) !important;
+  border-bottom: 1px solid var(--linea);
+}
+
+.marca-logo {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--dorado);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-style: italic; font-weight: 600;
+  font-size: 1.3rem; color: var(--dorado);
+  background-color: var(--form-bg);
+}
+
+/* Botón de tema (icono Bootstrap) */
+.btn-tema {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  font-size: 1.1rem;
+  color: var(--dorado);
+}
+.btn-tema:hover { color: var(--dorado-hover); }
+
+/* Botón hamburguesa */
+.navbar-toggler.icono-personalizado {
+  padding: 0.25rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--dorado);
+}
+.navbar-toggler.icono-personalizado:focus { box-shadow: none; }
+
+/* ============ FRANJA DE DATOS DEL INICIO ============
+   Usa CSS Grid centrada para evitar las columnas vacías.
+   Celular (<576px): 1 columna.
+   Tablet (≥576px):  2 columnas.
+   Escritorio (≥992px): 4 columnas en línea. */
+.franja-datos {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 1fr;
+  margin: 2.5rem auto 0 auto;
+  max-width: 1100px;
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+}
+.franja-dato {
+  padding: 1rem 0.75rem;
+  text-align: center;
+  border-top: 1px solid var(--linea);
+}
+.franja-dato:first-child { border-top: none; }
+@media (min-width: 576px) {
+  .franja-datos { grid-template-columns: 1fr 1fr; }
+  .franja-dato { border-top: none; border-bottom: 1px solid var(--linea); }
+  .franja-dato:nth-last-child(-n+2) { border-bottom: none; }
+  .franja-dato + .franja-dato { border-left: 1px solid var(--linea); }
+  .franja-dato:nth-child(2n+1) { border-left: none; }
+}
+@media (min-width: 992px) {
+  .franja-datos { grid-template-columns: repeat(4, 1fr); }
+  .franja-dato { border-bottom: none; }
+  .franja-dato + .franja-dato { border-left: 1px solid var(--linea); }
+}
+
+/* Tarjetas de producto */
+.producto-card {
+  transition: border-color 0.3s, transform 0.3s;
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+.producto-card:hover {
+  border-color: var(--dorado) !important;
+  transform: translateY(-3px);
+}
+/* Fotos 1200x896 (4:3): se recortan parejo con cover */
+.producto-img { aspect-ratio: 4/3; object-fit: cover; width: 100%; background: var(--form-bg); cursor: pointer; }
+
+/* Tarjeta "Otros sabores": ícono en lugar de foto */
+.producto-sin-foto {
+  aspect-ratio: 4/3; width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--form-bg); color: var(--dorado); font-size: 3.5rem;
+  cursor: pointer;
+}
+
+/* Etiquetas pequeñas (chips) para listar sabores disponibles */
+.chip-sabores { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.75rem; }
+.chip-sabor {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--linea);
+  color: var(--text-suave);
+  background: var(--form-bg);
+  border-radius: 999px;
+  overflow-wrap: anywhere;
+}
+
+/* Logo de la empresa en "Nosotros": vertical 825x1024 (4:5),
+   contain + fondo oscuro para que no se recorte */
+.logo-img {
+  aspect-ratio: 4/5; object-fit: contain; width: 100%;
+  background-color: #19150e;
+}
+
+/* Formularios */
+.form-control, .form-select {
+  background-color: var(--form-bg);
+  border: 1px solid var(--linea);
+  color: var(--text-principal);
+  border-radius: var(--radio);
+}
+.form-control:focus, .form-select:focus {
+  background-color: var(--form-bg);
+  color: var(--text-principal);
+  border-color: var(--dorado);
+  box-shadow: 0 0 0 0.25rem rgba(182, 146, 79, 0.25);
+}
+::-webkit-input-placeholder { color: var(--text-suave) !important; opacity: 0.7; }
+.form-check-input:checked { background-color: var(--dorado); border-color: var(--dorado); }
+.form-check-input:focus { border-color: var(--dorado); box-shadow: 0 0 0 0.25rem rgba(182,146,79,.25); }
+
+/* ============ ANIMACIONES DE SCROLL ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============ BOTONES FLOTANTES ============
+   Importante: el z-index debe quedar POR DEBAJO del panel lateral
+   (offcanvas usa 1045) y de los modales (1055). Así nunca tapa el
+   botón "Completar mis datos y enviar". Además, mientras el panel
+   del carrito está abierto, el bloque se oculta por completo. */
+.botones-flotantes {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 1030;
+  display: flex; flex-direction: column; gap: 0.6rem; align-items: center;
+}
+.botones-flotantes.oculto { display: none; }
+.btn-flotante {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background-color: var(--dorado); color: #fff; border: none;
+  font-size: 1.35rem; box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  transition: background-color 0.3s, transform 0.2s;
+  position: relative;
+}
+.btn-flotante:hover { background-color: var(--dorado-hover); color: #fff; transform: translateY(-2px); }
+
+/* Contador del carrito (sirve para el flotante y el del menú) */
+.contador-carrito {
+  position: absolute; top: -5px; right: -5px;
+  min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 999px;
+  background-color: var(--dorado-hover); color: #fff;
+  border: 2px solid var(--bg-principal);
+  font-size: 0.7rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+}
+/* Dentro del botón del menú, el contador usa posición absoluta respecto al botón */
+.posicion-contador { position: relative; }
+
+/* ============ PANEL DEL CARRITO (offcanvas) ============
+   Estructura: la lista hace scroll, el pie queda fijo abajo. */
+.offcanvas {
+  background-color: var(--bg-principal);
+  color: var(--text-principal);
+}
+.offcanvas-header { border-bottom: 1px solid var(--linea); }
+.offcanvas-header .btn-close { filter: none; }
+[data-bs-theme="light"] .offcanvas-header .btn-close { filter: none; }
+[data-bs-theme="dark"] .offcanvas-header .btn-close { filter: invert(1); }
+
+/* Zona desplazable de los productos */
+.panel-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0; /* permite que flex calcule el scroll correctamente */
+}
+
+/* Pie fijo del panel con totales y acciones */
+.panel-pie {
+  position: sticky;
+  bottom: 0;
+  background-color: var(--bg-principal);
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.15);
+}
+
+/* Protección contra textos largos sin espacios (p. ej. sabores personalizados) */
+#listaCarrito, #resumenListaForm {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Stepper de cantidad dentro del carrito */
+.stepper-btn {
+  width: 28px; height: 28px; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* ============ MODAL DE PRODUCTO ============ */
+.modal-content {
+  background-color: var(--bg-tarjeta);
+  color: var(--text-principal);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+}
+.modal-header, .modal-footer { border-color: var(--linea); }
+[data-bs-theme="dark"] .modal-header .btn-close { filter: invert(1); }
+
+/* Botones de tamaño en el modal (Mediano / Familiar). Sin preselección. */
+.tamano-grupo { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.btn-tamano {
+  flex: 1 1 140px;
+  min-width: 0;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border: 1px solid var(--linea);
+  background: var(--form-bg);
+  color: var(--text-principal);
+  border-radius: var(--radio);
+  transition: all 0.2s;
+}
+.btn-tamano:hover { border-color: var(--dorado); }
+.btn-tamano.seleccionado {
+  border-color: var(--dorado);
+  background: var(--dorado);
+  color: #fff;
+}
+.btn-tamano .precio { display: block; font-size: 0.9rem; opacity: 0.9; }
+.btn-tamano strong { display: block; font-family: var(--font-display); font-size: 1.05rem; }
+
+/* Contador +/- para muffins dentro del modal */
+.contador-cajas { display: flex; align-items: center; gap: 0.75rem; }
+.contador-cajas .btn { width: 36px; height: 36px; padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+.contador-cajas .valor { min-width: 2.5rem; text-align: center; font-weight: 600; font-size: 1.1rem; }
+
+/* ============ PREGUNTAS FRECUENTES (acordeón) ============ */
+.accordion-item {
+  background-color: var(--bg-tarjeta);
+  border: 1px solid var(--linea);
+  color: var(--text-principal);
+}
+.accordion-button {
+  background-color: var(--bg-tarjeta);
+  color: var(--text-principal);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--form-bg);
+  color: var(--dorado);
+  box-shadow: none;
+}
+.accordion-button:focus {
+  border-color: var(--dorado);
+  box-shadow: 0 0 0 0.25rem rgba(182,146,79,0.25);
+}
+.accordion-body { color: var(--text-suave); }
+
+/* ============ TOAST (aviso de producto agregado) ============ */
+.toast {
+  background-color: var(--bg-tarjeta);
+  color: var(--text-principal);
+  border: 1px solid var(--dorado);
+}
+
+/* ============ AJUSTES PARA PANTALLAS DE 360 px ============
+   Garantiza que nada se salga del ancho del celular pequeño. */
+@media (max-width: 400px) {
+  .btn-tamano { flex-basis: 100%; }
+  .toast-container { width: 100%; }
+  .toast { width: calc(100% - 1rem); }
+}
