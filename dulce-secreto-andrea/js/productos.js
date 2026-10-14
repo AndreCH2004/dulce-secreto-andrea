@@ -76,7 +76,7 @@ const PRODUCTOS = [
       { icono: "bi-egg-fried",     texto: "Hecho con plátano fresco de estación" },
       { icono: "bi-clock-history", texto: "Preparado bajo pedido, con 24h de anticipación" }
     ],
-    precios: { Mediano: 18.00, Familiar: 25.00 }
+    precios: { Mediano: 30.00, Familiar: 45.00 }
   },
 
   {
@@ -91,7 +91,7 @@ const PRODUCTOS = [
       { icono: "bi-egg-fried",     texto: "Cacao de buena calidad y baño de chocolate" },
       { icono: "bi-clock-history", texto: "Preparado bajo pedido, con 24h de anticipación" }
     ],
-    precios: { Mediano: 16.00, Familiar: 22.00 }
+    precios: { Mediano: 40.00, Familiar: 55.00 }
   },
 
   {
@@ -106,7 +106,7 @@ const PRODUCTOS = [
       { icono: "bi-egg-fried",     texto: "Ralladura y jugo de naranja natural" },
       { icono: "bi-clock-history", texto: "Preparado bajo pedido, con 24h de anticipación" }
     ],
-    precios: { Mediano: 15.00, Familiar: 20.00 }
+    precios: { Mediano: 25.00, Familiar: 40.00 }
   },
 
   {
@@ -122,7 +122,7 @@ const PRODUCTOS = [
       { icono: "bi-clock-history", texto: "Horneados el mismo día de tu pedido" }
     ],
     /* Para muffins, "caja" es el precio de la caja x6 unidades */
-    precios: { caja: 15.00 }
+    precios: { caja: 28.00 }
   },
 
   {
@@ -137,7 +137,7 @@ const PRODUCTOS = [
       { icono: "bi-box-seam",      texto: "Se venden por caja, mínimo 6 unidades" },
       { icono: "bi-clock-history", texto: "Horneados el mismo día de tu pedido" }
     ],
-    precios: { caja: 15.00 }
+    precios: { caja: 22.00 }
   },
 
   /* ------------------------------------------------------------
