@@ -16,7 +16,7 @@ const CONFIG = {
      Ejemplo Perú: "51" + "930371567"  →  "51930371567"
      >>> PARA CAMBIAR EL NÚMERO, EDITA SOLO ESTA LÍNEA <<<
      ------------------------------------------------------------ */
-  whatsapp: "51930371567",
+  whatsapp: "51912260372",
 
   /* Horas de anticipación mínima para pedir un KEKE
      (los muffins se hornean el mismo día) */
